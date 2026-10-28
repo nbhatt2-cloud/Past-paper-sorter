@@ -250,7 +250,7 @@ var CONFIG={
 };
 /* ====================================================================== */
 
-var SC=1.6, UN="Unsorted", PAGE_LIMIT=24;
+var SC=1.4, UN="Unsorted", PAGE_LIMIT=24;
 
 /* ---------- Subjects, topics and the words that point to them ---------- */
 var GROUPS=[
@@ -614,7 +614,7 @@ async function composeBlock(b){
   var l=Math.max(0,cols.l-14), r=Math.min(W-1,cols.r+14), fin=mkCanvas(r-l+1,H);
   var fc=fin.getContext("2d"); fc.fillStyle="#fff"; fc.fillRect(0,0,fin.width,fin.height); fc.drawImage(out,l,0,r-l+1,H,0,0,r-l+1,H);
   out.width=1;
-  var blob=await new Promise(function(res){fin.toBlob(res,"image/jpeg",0.74);});
+  var blob=await new Promise(function(res){fin.toBlob(res,"image/jpeg",0.65);});
   var dims={blob:blob,w:fin.width,h:fin.height}; fin.width=1;
   return dims;
 }
